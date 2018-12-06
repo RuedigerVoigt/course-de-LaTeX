@@ -1,0 +1,55 @@
+% Jedes Dokument braucht eine Documentclass
+% Diese beeinflusst (auch) welche befehle es gibt: Ein \chapter
+% gibt es zum Beispiel in book, aber nicht in article.
+\documentclass{article}
+
+% Präambel
+% ab hier bis \begin{document}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[a4paper]{geometry}
+% ermöglicht detailierte Einstellungen aller Ränder und Abstände
+% meistens macht eine documentclass sinnvolle Vorgaben
+
+\usepackage{graphicx}
+
+\usepackage[french,english,ngerman]{babel}
+% babel hat Auswirkungen auf Bezeichnungen im Dokument
+% die zuletzt aufgelistete Sprache ist nun Standard für das Dokument
+% statt "Contents" schreibt LaTeX nun "Inhaltsverzeichnis"
+
+
+\usepackage{amsmath} % unbedingt für Mathe
+\usepackage{amssymb} % unbedingt für Mathe
+\usepackage{mathtools} % erweitert die beiden vorherigen
+\usepackage{cancel} % erlaubt das Durchstreichen von Formel-Bestandteilen
+
+\usepackage[marginal]{footmisc}
+% beeinflusst die Darstellung von Fußnoten
+% 'marginal' bewirkt, dass bei mehrzeiligen Fußnoten alle exakt an der gleichen Stelle anfangen
+
+\usepackage[hidelinks]{hyperref}
+% verlinkt unter anderem das Inhaltsverzeichnis
+% die Option 'hidelinks' deaktiviert die optische Hervorhebung
+% wenn möglich als letztes Package in der Präambel laden
+
+\title{Wir lernen \LaTeX}
+\author{Rüdiger Voigt}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\listoffigures
+
+% mit \input fügen wir den Inhalt einer Datei einfach so
+% hier ein. ideal um große Dokumente in logische Abschnitte 
+% aufzuteilen.
+\input{intro}
+\input{mathe}
+\input{floats}
+
+\end{document}

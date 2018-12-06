@@ -1,0 +1,17 @@
+\section{Floats}
+
+% die Figure wird nicht einfach an Ort und Stelle eingefügt, sondern
+% da wo es Sinn macht. Ich übergebe mit [htpb] Präferenzen:
+% h = here
+% t = top (oben auf einer Seite)
+% p = page (gesammelt mit anderen Figures auf einer Seite)
+% b = bottom (unten auf einer Seite)
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{../img/Dala}
+% width auf 50 prozent der Breite des Textkörpers gesetzt
+% mit .. eine Ebene hoch
+\end{center}
+\caption[Katze]{Bildunterschrift}
+\label{img:katze} % das Label NACH dem Element setzen damit es sich auf das richtige bezieht!
+\end{figure}
