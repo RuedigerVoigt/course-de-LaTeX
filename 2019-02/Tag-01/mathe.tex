@@ -1,0 +1,13 @@
+\chapter{Mathe}
+
+Es gibt drei Anzeigemodi:\\
+\ \\
+Beim ersten schreiben Sie Ihre Formeln, wie etwa $\sum_{0}^{\infty}$ mitten in den Fließtext, indem Sie diese zwischen zwei \$-Zeichen aufschreiben. Die Darstellung ist platzsparend, aber bei komplexen Formeln schwer zu lesen. Falls Sie das Dollarzeichen im text brauchen, müssen Sie es mit einem Backslash escapen, d.h. \verb|100\$| ergibt 100\$.\\
+\ \\
+Daneben gibt es den abgesetzen Modus, der die Formel in eine eigene Zeile setzt. Hier ist die Darstellung deutlicher:\[ \sum_{0}^{\infty} \]
+\ \\
+Die dritte Methode ist die equation-Umgebung. Hier wird die Formel abgesetzt dargestellt und zusätzlich nummeriert.
+\begin{equation}\label{einstein}
+\sum_{0}^{\infty}
+\end{equation}
+Wenn Sie der equation ein Label geben (nach dem Beginn der Umgebung!), können Sie mit \verb|\ref{nameDesLabel}| oder \verb|\eqref{nameDesLabel}| überall im Dokument darauf Bezug nehmen. \verb|\ref| wird dabei ohne Klammern dargestellt: \ref{einstein}. Der Befehl \verb|\eqref| setzt automatisch Klammern: \eqref{einstein}.

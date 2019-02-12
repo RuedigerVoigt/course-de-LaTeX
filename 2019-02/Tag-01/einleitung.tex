@@ -1,0 +1,54 @@
+ \chapter{Einleitung}\label{chapterIntroduction}
+
+\section{Querverweise}
+
+Wenn Elemente ein Label haben, können Sie mit \verb|\ref| auf deren Nummerierung und mit \verb|\pageref| auf die Seite verweisen. Also zum Beispiel: Siehe Kapitel \ref{chapterIntroduction} auf Seite \pageref{chapterIntroduction}.\\
+\ \\
+
+\section{Sprache}
+
+Um in anderen Sprachen als Englisch zu arbeiten, benötigen Sie das babel-package. Dann können Sie mit \verb|\foreignlanguage{}{}| mitten im Satz die Sprache wechseln:  \foreignlanguage{english}{\LaTeX\ is great!}
+
+\section{Tabellen}
+
+Die Float-Umgebung für Tabellen heißt table. Die eigentliche Tabelle ist eine tabular-Umgebung.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{rlc} % definiert die Spalten und deren Ausrichtung
+% r = rechtsbündig
+% l = linksbündig
+% c = zentriert
+\toprule % kommt aus booktabs
+Variable & Wert & Beispiel\\
+\midrule % braucht booktabs
+a & 12345 6 & 3 \\
+bbbbbbbbbbbbb & sedrftzuiopü\\
+c & ertzuiop\\
+\bottomrule
+\end{tabular}
+\label{tabMeine}
+\caption{meine erste Tabelle}
+\end{center}
+\end{table}
+
+
+\section{Neues aus der Wissenschaft}
+
+\subsection{Subsection mit Nummerierung im Inhaltsverzeichnis}
+
+\subsection*{Subsection, aber nicht im Inhaltsverzeichnis}
+% Das Sternchen bewirkt, dass diese Subsection nicht im Inhaltsverzeichnis auftaucht.
+% Sie wird auch nicht nummeriert, denn sonst gäbe es einen Sprung in der Nummerierung im 
+% Inhaltsverzeichnis.
+% Funktioniert so auch mit Kapiteln etc..
+
+\subsection{Zeilenumbrüche}
+
+Ein einfache Leerzeile
+
+bewirkt, dass die erste Zeile des Folgeabsatzes eingerückt wird. Die zweite Zeile jedoch geht mit normalem linken Rand weiter und jede Folgende ebenso.
+
+Das können Sie mittels Umbrüchen umgehen\footnote{Auch wenn das keine besonders schöbne Methode ist!}. \\
+\ \\ % Achtung: hier muss ein erzwungenes Leerzeichen (Backslash + Leerzeichen) rein, sonst klappt der Umbruch nicht!
+Das ist ein neuer Satz. 

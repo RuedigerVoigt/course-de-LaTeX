@@ -1,0 +1,70 @@
+\documentclass[oneside, 10pt]{book}
+% oneside ist für den Entwurf praktisch. Es schaltet ab, dass 
+% Kapitel immer auf der rechten Seite beginnen müssen 
+% (und Ähnliches).
+%
+% Sie setzen die Basisschriftgröße für eine normale Zeile. 
+% LaTeX passt den Rest (Überschriften, etc.) daran an.
+%
+% Die Option draft ersetzt Bilder durch Rahmen 
+% und markiert übervolle Zeilen.
+
+\usepackage[utf8]{inputenc} % so ist die Datei encodiert
+\usepackage[T1]{fontenc} % verhindert, dass Umlaute bei Copy-n-Paste zu zwei Buchstaben werden
+
+\usepackage[a4paper]{geometry} 
+% geometry für Seitenränder, Abstände aller Art, Papierformat, ...
+
+% MATHE
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+% Blindtext erzeugen um floats et cetera vorführen zu können.
+\usepackage{blindtext}
+
+
+\usepackage[french,english,ngerman]{babel}
+% Die zuletzt geladene Sprache wird Default für das Dokument.
+% Hier also ngerman (Deutsch neuer Rechtschreibung).
+% Sprachwechsel im Text mit \foreignlanguage{}{}.
+
+\usepackage{graphicx} % Bilder einbinden
+
+\usepackage{float}
+ % Option H: erzwingt hier!
+
+\usepackage{booktabs} % schöne Tabellen
+
+\usepackage{lmodern}
+% Hier setzen wir lmodern als Schrift für das Dokument.
+
+\usepackage{hyperref}
+% Verlinkung im Dokument
+% Weblinks
+
+\hyphenation{Binnen-schiff-fahrts-kapitäns-patent Boden-schleif-maschinen-verleih}
+% Sie können Worttrennungen für das ganze Dokument hier hinterlegen.
+% Bei mehrsprachigen Dokumenten beachten Sie die Antwort von egreg hier:
+% https://tex.stackexchange.com/questions/182569/how-to-manually-set-where-a-word-is-split
+
+
+\begin{document}
+
+% automatisch generierte Verzeichnisse:
+\tableofcontents % Inhaltsverzeichnis: erfasst Kapitel, Abschnitte, ...
+\listoffigures % erfasst alle Bilder, die als figure eingebunden sind
+\listoftables % erfasst alle Tabellen, die mit der table Umgebung eingebunden sind.
+
+
+% Jedes Kapitel in eine eigene Datei.
+% Die Dateien brauchen keine Präambel / müssen keine Packages laden.
+% Übersetzt nach PDF wird aus dieser Hauptdatei.
+% => plus an Übersicht
+% => erleichtert die Fehlersuche
+
+\input{einleitung}
+\input{mathe}
+\input{fazit}
+
+\end{document}
