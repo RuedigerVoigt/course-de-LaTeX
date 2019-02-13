@@ -1,0 +1,168 @@
+\documentclass{beamer}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french, english, ngerman]{babel}
+
+% Probieren Sie verschiedene Themes einfach aus!
+%\usetheme{Frankfurt}
+\usetheme{Montpellier}
+%\usetheme{Marburg}
+%\usetheme{Copenhagen}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% hyperref wird automatisch geladen!
+%\usepackage{hyperref}
+
+\usepackage{lmodern}
+
+
+\title{Präsentationen mit \LaTeX}
+\subtitle{-- die beamer-documentclass --}
+\author{Rüdiger Voigt, M.A.}
+\date{\today}
+
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Übersicht}
+\tableofcontents
+\end{frame}
+
+\section{Grundlagen}
+
+\begin{frame}
+\frametitle{Präsentationen mit \LaTeX}
+Es ist ohne Weiteres möglich Präsentationen mit \LaTeX\ zu erstellen. Dabei eignet es sich ganz besonders für Vorträge zu wissenschaftlichen Themen.\\
+\ \\
+Was Sie in \LaTeX\ nur schwer umsetzen können sind animierte Übergänge oder Soundeffekte.
+\end{frame}
+
+\begin{frame}
+\frametitle{Vorteile von \LaTeX\ gegenüber Powerpoint}
+\begin{itemize}
+\item Präsentationen werden ähnlich wie andere \LaTeX-Dokumente erstellt.
+\item Ihnen stehen fast alle Funktionen von \LaTeX\ zur Verfügung. Dazu zählen unter anderem die mathematischen Formeln.
+\item Sie können Inhalte leicht aus \LaTeX-Dokumenten in eine Präsentation kopieren.
+\item Zur Anzeige Ihrer Präsentation benötigen Sie nur einen PDF-Viewer mit Vollbildfunktion -- zum Beispiel den Adobe Reader\footnote{STRG + L für Vollbild}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Warum beamer?}
+Es gibt mehrere packages mit welchen Sie Präsentationen in \LaTeX\ erstellen können. Für beamer spricht:
+\begin{enumerate}
+\item eine hervorragende Dokumentation
+\item einfache Befehle
+\item gute und vielfältige Templates
+\item schnelle Ergebnisse
+\end{enumerate}
+\end{frame}
+
+\section{Minimalbeispiel}
+
+\begin{frame}
+\frametitle{Vorgehen}
+\begin{itemize}
+\item Legen Sie ein Dokument mit der documentclass beamer an.
+\item Wählen Sie ein Theme und eventuell noch ein Farbtheme.
+\item Speichern Sie in der Präambel die Basisinformation (title, author, \dots) und erstellen Sie eine titlepage.
+\item Teilen Sie die Präsentation in sections auf.
+\item Erstellen Sie die einzelnen Frames.
+\item Kompilieren Sie die Version für den Vortrag und eventuell eine Version als Handout.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Minimalbeispiel}
+\begin{verbatim}
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, ngerman]{babel}
+\usetheme{Frankfurt}
+\title{Präsentationen mit \LaTeX}
+\subtitle{-- die beamer-documentclass --}
+\author{Rüdiger Voigt, M.A.}
+\date{\today}
+\begin{document}
+...
+\end{document}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Die Title-Page}
+\verb|\begin{frame}|\\
+\verb|\titlepage|\\
+\verb|\end{frame}|\\
+\ \\
+Erzeugt eine Titelseite mit den Informationen aus der Präambel (Titel, Untertitel, Autor, Datum, ...)
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Eine einzelne Folie}
+\verb|\begin{frame}|\\
+\verb|\frametitle{Kopfzeile}|\\
+\verb|Inhalt der Folie ...|\\
+\verb|\end{frame}|\\
+\ \\
+Falls Sie auf der Seite Code mit der verbatim-Umgebung ausgeben, dann müssen Sie der frame die Option fragile geben!
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Strukturierung mit sections}
+Sie sollten Ihre Präsentation mit \verb|\section{Abschnittstitel}| in Abschnitte aufteilen, denn das erzeugt bei den meisten Themes eine übersichtliche Navigationsstruktur, die ihren Zuhörern anzeigt wo Sie im Vortrag sind.\\
+\ \\
+Beamer lädt automatisch hyperref und die Navigationselemente werden automatisch verlinkt. Damit können Sie schnell zu einem bestimmten Thema springen.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Weitere Features}
+\begin{itemize}
+\item Sie können unter anderem mit dem \verb|\pause| Befehl Inhalte schrittweise einblenden. Jeder Schritt entspricht dabei einer neuen Seite im PDF. Für Handouts können Sie automatisiert eine Version erstellen, die das auf eine Einzelseite reduziert.\pause
+\item Es ist möglich Informationen für die vortragende Person auf einem zweiten Bildschirm auszugeben.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Feature: Blöcke}
+\begin{theorem}[Titel für das Theorem]
+Theorem
+\end{theorem}
+
+\begin{alertblock}{ein Alertblock}
+für besonders wichtige Informationen
+\end{alertblock}
+\end{frame}
+
+
+\section{Anleitungen}
+
+\begin{frame}
+\frametitle{Offizielle Anleitung}
+Die offizielle Anleitung hat ein Kapitel zum Einstieg, dass Ihnen alles Wesentliche anschaulich vermittelt. Der Rest der Anleitung geht ins Detail.\\
+\ \\
+Sie finden Sie hier: \url{https://ctan.org/pkg/beamer}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Informationen zum Kurs}
+Die Unterlagen zum Kurs finden Sie hier:\\
+\url{https://www.ruediger-voigt.eu/latex-kurs.html}\\
+\ \\
+Die .tex-Datei dieser Präsentation und weitere Beispiele finden Sie im github-Repository des Kurses:\\
+\url{https://github.com/RuedigerVoigt/course-de-LaTeX}
+\end{frame}
+\end{document}
