@@ -1,0 +1,122 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Markdown Beispiel-Dokument},
+            pdfauthor={Rüdiger Voigt, M.A.},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Markdown Beispiel-Dokument}
+\author{Rüdiger Voigt, M.A.}
+\date{}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\section{Vorbemerkung}\label{vorbemerkung}
+
+Es gibt mehrere Dialekte von markdown. Hier verwende ich die Variante,
+welche pandoc versteht!
+
+\newpage
+
+\section{Beispiele Text}\label{beispiele-text}
+
+\subsection{Fußnoten}\label{fuuxdfnoten}
+
+Das ist ein Satz mit Fußnote\footnote{Inhalt der Fußnote}
+
+\subsection{Aufzählungen}\label{aufzuxe4hlungen}
+
+\begin{itemize}
+\tightlist
+\item
+  a
+\item
+  b
+\item
+  c
+
+  \begin{itemize}
+  \tightlist
+  \item
+    zweite Ebene
+  \end{itemize}
+\item
+  d
+\end{itemize}
+
+\section{Beispiele Mathe}\label{beispiele-mathe}
+
+\(\underbrace{\hat{\mu} \sum_{0}^{\infty} \frac{x}{y}}_{\frac{\int_1^{\infty}\omega}{23}}\)
+
+\section{Tabellen}\label{tabellen}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Warengruppe & Auf Lager & Bedarf\tabularnewline
+\midrule
+\endhead
+Pinguine & 2 & 23\tabularnewline
+Dropbears & 0 & 1000\tabularnewline
+Dackel & 1 & 100000\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}
