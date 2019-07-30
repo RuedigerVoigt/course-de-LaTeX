@@ -43,7 +43,13 @@ Es gibt drei Möglichkeiten Literatur in Ihre Datenbank einzulesen:
 1. Manuell: Sie wählen die Literaturart aus und füllen alle Felder manuell aus. Das ist fehleranfällig und mühsam.
 1. Über Exportdateien: Wenn Sie die Seite des Artikels auf der Seite des Verlags finden, können Sie dort oft Dateien mit allen nötigen Informationen im .bib oder .ris Format runterladen. Diese müssen Sie dann mit Ihrer Literaturverwaltung importieren und gegebenfalls etwas bereinigen. (manche Verlage erzeugen diese unsauber und Sie finden zum Beispiel LaTeX-Befehlszeichen im Abstract.)
 1. Über die DOI-Nummer: Nicht jeder Artikel hat eine [DOI-Nummer](https://de.wikipedia.org/wiki/Digital_Object_Identifier), aber der Großteil der in den letzten Jahren erschienen Fachliteratur. Die meisten Literaturverwaltungsprogramme haben ein Eingabefeld für diese Nummer und sind in der Lage alle nötigen Informationen darüber aus dem Internet zu ziehen. Hier müssen Sie die Eingabe nur noch gegenchecken.
+
+
 ## .bib Datei generieren
+
+Falls Ihre Software direkt im .bib-Format arbeitet, müssen Sie hier nichts tun.
+
+Falls Ihre Software ein eigenes Format hat, müssen Sie jedesmal wenn Sie neue Quellen hinzugefügt haben, einen Export in das .bib-Format vornehmen. Wenn noch nicht geschehen, sollten Sie das automatisch generieren von keys aktiviert haben, oder selbst solche für jeden Eintrag erstellen.
 
 # Zitieren im Dokument
 
