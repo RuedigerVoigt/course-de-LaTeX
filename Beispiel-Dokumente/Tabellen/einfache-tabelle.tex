@@ -1,0 +1,102 @@
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{booktabs}
+
+\usepackage[ngerman]{babel}
+
+\title{Einfache Tabelle}
+
+
+\begin{document}
+
+\listoftables
+
+
+
+\section{Erläuterungen}
+
+\begin{itemize}
+	\item Das Basis-Element ist die tabular-Umgebung. Sie ist kein Float, sondern wird stur da eingefügt wo sie definiert wurde. 
+	\item Um die tabular-Umgebung nun Eigenschaften eines Float zu geben, wird sie in eine table-Umgebung gefasst. Jetzt kann sie eine caption haben und taucht im Tabellenverzeichnis auf.
+	\item Sehr häufig lädt man das booktabs-Package dazu. Es ändert ein wenig die Abstände, so dass man auf auf senkrechte Linien verzichten kann, welche Inhalte trennen. Ferner definiert es \verb|\toprule|, \verb|\midrule| und \verb|\bottomrule|: vertikale Linien, welche die Tabelle begrenzen.
+\end{itemize}
+
+\enlargethispage{3cm}
+
+
+\section{Syntax}
+
+Die Tabelle \ref{tab:zehnjahre} befindet sich auf Seite \pageref{tab:zehnjahre}. Hier ihr Code:
+
+\begin{verbatim}
+\begin{table}
+\centering
+\begin{tabular}{rcl}
+\toprule
+Zahl & Name & Bemerkung\\
+\midrule
+1 & text & langer Text\\
+2 & blub & text\\
+\end{tabular}
+\caption{Das Ergebnis von 10 Jahren Forschung}
+\label{tab:zehnjahre}
+\end{table}
+\end{verbatim}
+
+\noindent Erläuterung:
+
+\begin{itemize}
+	\item Die äußere table-Umgebung konvertiert das Ganze in ein Float.
+	\item Der von uns definierte Schlüssel in \verb|\label| kann mit \verb|\ref{}| und \verb|\pageref{}| verwendet werden. Dabei ist der Wert \verb|tab:zenhnjahre| frei gewählt und könnte komplett anderes lauten. Allerdings macht es Sinn anzudeuten auf welche Art von Element sich das Label bezieht (deshalb \verb|tab:|) und welches Element innerhalb dieser Gruppe das ist. 
+	\item Die zweite geschweifte Klammer in \verb|\begin{tabular}{rcl}| definiert die Spalten:
+	\begin{itemize}
+		\item Jede Spalte muss hier definiert werden.
+		\item $r$ meint right / rechtsbündig
+		\item $c$ meint center / zentriert
+		\item $l$ meint left / linksbündig
+	\end{itemize}
+	\item Das \verb|&| Symbol trennt die einzelnen Spalten voneinander.
+	\item Sie beenden die Tabellenzeile immer mit \verb|\\|.
+	\item alle Befehle im Code mit $rule$ sind von booktabs definierte Trennlinien unterschiedlicher Dicke.
+\end{itemize}
+
+\section{Die Tabelle}
+
+Da wir die Tabelle in eine float-Umgebung gesetzt haben, bestimmt \LaTeX\ wo sie genau angezeigt wird. In diesem Fall vor der Überschrift, obowhl sie erst danach definiert wurde.\\
+\\
+In der Praxis empfiehlt es sich umfangreiche Tabellen in eine eigene Datei zu schreiben und diese mit \verb|\input{}| einzubinden.
+
+\begin{table}
+\centering
+\begin{tabular}{rcl}
+\toprule
+Zahl & Name & Bemerkung\\
+\midrule
+1 & text & langer Text\\
+2 & blub & text\\
+\end{tabular}
+
+\caption{10 Jahre Forschung}
+\label{tab:zehnjahre}
+\end{table}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
