@@ -1,0 +1,76 @@
+\documentclass[paper=a4,foldmarks=on,11pt]{scrlttr2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% angenommen Sie schreiben Ihren Brief in Deutsch mit
+% ein paar Worten in Englisch.
+\usepackage[english,ngerman]{babel}
+
+% Passen Sie die folgende Schrift gegebenfalls an
+% andere Dokumente an.
+\usepackage{lmodern}
+
+
+\usepackage{textcomp}
+
+% falls Sie eine Unterschrift als Bild einfügen möchten
+\usepackage{graphicx}
+
+
+% Mehrere Daten werden an verschiedenen Stellen benötigt.
+% Deshalb werden Sie hier als Variablen angelegt und dann
+% wo nötig eingefügt.
+
+\setkomavar{fromname}{Max Musterfrau}
+\setkomavar{fromaddress}{Karneval Str. 11\\
+11111 Köln}        %% Absenderadresse
+\setkomavar{place}{Köln} % wird neben das Datum gesetzt!
+\setkomavar{fromphone}{+49~221~-~XX~XX~XX}
+\setkomavar{fromemail}{muster@example.com}
+
+
+% So fügen Sie eine gescannte Unterschrift ein:
+%\setkomavar{signature}{\parbox{0cm}{\raisebox{8ex}{\includegraphics{unterschrift.jpg}}}Max Musterfrau}
+% Stattdessen Text
+% mehrere Zeilenumbüche um den Abstand ein wenig zu erhöhen
+\setkomavar{signature}{\ \\\ \\Max Musterfrau, M.A.}
+
+
+
+
+
+% Das Wort "Anlage(n)" sieht komisch aus. Deshalb definieren 
+% wir das hier als "Analagen" neu:
+\renewcaptionname{ngerman}{\enclname}{Anlagen}
+
+% gegebenfalls anpassen um Rahmen um Links loszuwerden et cetera
+\usepackage{hyperref}
+
+\begin{document}
+
+% Einstellungen für alle Briefe
+
+\begin{letter}{%
+Empfänger\\
+Straße\\
+Stadt\\}
+% hier ()!) wird eingestellt, ob im Absender Email und / 
+% oder Telefonnummer erscheinen.
+\KOMAoptions{fromemail=true,fromphone=true}
+
+% Betreffzeile
+\setkomavar{subject}[]{Stelle als \foreignlanguage{english}{CEO}}
+
+\opening{Sehr geehrte Damen und Herren,}
+\ \\
+ich beherrsche \LaTeX\ und bin deshalb perfekt für diesen Job.\\
+\ \\
+Über die Einladung zu einem persönlichen Gespräch würde ich mich sehr freuen.
+
+\closing{Mit freundlichen Grüßen}
+% Anlagen:
+\encl{- Lebenslauf\\- Prüfungszeugnis\\- Arbeitszeugnis\\- diverse Bescheinigungen über IT- und Sprachkurse}
+
+\end{letter}
+
+\end{document}

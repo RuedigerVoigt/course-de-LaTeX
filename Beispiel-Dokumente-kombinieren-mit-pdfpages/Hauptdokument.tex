@@ -1,0 +1,18 @@
+\documentclass{article}
+
+% Gleiche DIN-Größe wie die Dokumente
+\usepackage[a4paper]{geometry}
+
+% Ohne pdfpages können wir nichts kombinieren
+\usepackage{pdfpages}
+
+% Um Bilder verwenden zu können
+\usepackage{graphicx}
+
+\begin{document}
+% ACHTUNG: pages=- bedeutet ALLE Seiten
+% Sie könnten mit diesem Befehl auch Einzelseiten aus einem
+% umfangreichen Dokument einfügen.
+\includepdf[pages=-]{Anschreiben/Anschreiben.pdf}
+\includepdf[pages=-]{Lebenslauf/moderncv.pdf}
+\end{document}
