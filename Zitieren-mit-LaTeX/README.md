@@ -37,7 +37,7 @@ Citavi | :x: | :x: | :heavy_check_mark: | Kommerziell / Hat ein eigenes Format. 
 EndNote | :x: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
 Mendeley | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
 
-*Als Studierende der Universität Köln können Sie (mit Stand Sommer 2019) zumindest Endnote und Citavi vergünstigt beziehen. Wenn Sie sich für kostenpflichtige Softwware entscheiden, sollten Sie vorab mit der Demo-Version prüfen, ob der LaTeX-Export reibungslos klappt und Sie mit dem Workflow zurecht kommen.*
+*Als Studierende der Universität Köln können Sie (mit Stand Sommer 2019) zumindest Endnote und Citavi vergünstigt beziehen. Wenn Sie sich für kostenpflichtige Software entscheiden, sollten Sie vorab mit der Demo-Version prüfen, ob der LaTeX-Export reibungslos klappt und Sie mit dem Workflow zurecht kommen.*
 
 **Bei Programmen, die nicht direkt mit .bib-Dateien arbeiten, müssen Sie oft den LaTeX-Support noch aktivieren!** Zum Beispiel müssen Sie dies in Citavi tun, damit Keys zum Zitieren generiert werden.
 
