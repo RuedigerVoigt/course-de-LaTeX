@@ -28,14 +28,16 @@ Diese Datenbank ist eine .bib-Datei. Die könnte man mit einem Texteditor selbst
 Einerseits könnte man benötigte Informationen vergessen und andererseits hat man sich schnell vertippt und einen Syntaxfehler.
 Deshalb nimmt man dazu spezialisierte Software:
 
-Software | Kommentar
------- | ------
-JabRef | Arbeitet ohne Umweg mit .bib-Dateien. Aktuell (Sommer 2019) keine Empfehlung, weil eine ganz bestimmte Version von Java benötigt wird.
-BibDesk | Für MacOS
-Citavi | Kommerziell / Hat ein eigenes Format. / Man kann Unterstützung für LaTeX aktivieren, so dass Keys generiert werden und ein Export nach .bib möglich wird.
-[Zotero](https://www.zotero.org/) | 
+Software | Linux | Mac | Windows | Kommentar
+------ | ------ |------ |------ |------ 
+JabRef | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Arbeitet ohne Umweg mit .bib-Dateien. *Aktuell (Sommer 2019) leider keine Empfehlung, weil eine ganz bestimmte Version von Java benötigt wird.*
+BibDesk | :x: | :heavy_check_mark: | :x: | 
+[Zotero](https://www.zotero.org/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
+Citavi | :x: | :x: | :heavy_check_mark: | Kommerziell / Hat ein eigenes Format. / Man kann Unterstützung für LaTeX aktivieren, so dass Keys generiert werden und ein Export nach .bib möglich wird.
+EndNote | :x: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
+Mendeley | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
 
-*Als Studierende der Universität Köln können Sie (mit Stand Sommer 2019) zumindest Endnote und Citavi vergünstigt beziehen.*
+*Als Studierende der Universität Köln können Sie (mit Stand Sommer 2019) zumindest Endnote und Citavi vergünstigt beziehen. Wenn Sie sich für kostenpflichtige Softwware entscheiden, sollten Sie vorab mit der Demo-Version prüfen, ob der LaTeX-Export reibungslos klappt und Sie mit dem Workflow zurecht kommen.*
 
 **Bei Programmen, die nicht direkt mit .bib-Dateien arbeiten, müssen Sie oft den LaTeX-Support noch aktivieren!** Zum Beispiel müssen Sie dies in Citavi tun, damit Keys zum Zitieren generiert werden.
 
