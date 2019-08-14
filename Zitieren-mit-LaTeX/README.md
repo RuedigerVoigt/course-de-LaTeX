@@ -25,25 +25,9 @@ Zudem kann man beruhigt sein ein vollständiges Literaturverzeichnis zu haben.
 ## Software zur Verwaltung
 
 Diese Datenbank ist eine .bib-Datei.
-Es macht Sinn spezialisierte Software zu verwenden um diese zu erstellen.
-Es gibt viele Programme in diesem Bereich:
-
-
-Software | Linux | Mac | Windows | Kommentar
------- | ------ |------ |------ |------ 
-JabRef | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Arbeitet ohne Umweg mit .bib-Dateien. *Aktuell (Sommer 2019) leider keine Empfehlung, weil eine ganz bestimmte Version von Java benötigt wird.*
-BibDesk | :x: | :heavy_check_mark: | :x: | 
-[Zotero](https://www.zotero.org/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-Citavi | :x: | :x: | :heavy_check_mark: | Kommerziell / Hat ein eigenes Format. / Man kann Unterstützung für LaTeX aktivieren, so dass Keys generiert werden und ein Export nach .bib möglich wird.
-EndNote | :x: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
-Mendeley | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
-
-*Als Studierende der Universität Köln können Sie (mit Stand Sommer 2019) zumindest Endnote und Citavi vergünstigt beziehen. Wenn Sie sich für kostenpflichtige Software entscheiden, sollten Sie vorab mit der Demo-Version prüfen, ob der LaTeX-Export reibungslos klappt und Sie mit dem Workflow zurecht kommen.*
-
-**Bei Programmen, die nicht direkt mit .bib-Dateien arbeiten, müssen Sie oft den LaTeX-Support noch aktivieren!** Zum Beispiel müssen Sie dies in Citavi tun, damit Keys zum Zitieren generiert werden.
-
-Theoretisch könnte man die .bib-Datei mit einem Texteditor selbst erstellen und pflegen, aber das ist fehleranfällig. 
-Einerseits könnte man benötigte Informationen vergessen und andererseits hat man sich schnell vertippt und einen Syntaxfehler. Der Quellcode einer Beispiel-Datei:
+Theoretisch könnte man diese mit einem Texteditor selbst erstellen und pflegen, aber das ist fehleranfällig. 
+Einerseits könnte man benötigte Informationen vergessen und andererseits hat man sich schnell vertippt und einen Syntaxfehler.
+Der Quellcode einer Beispiel-Datei mit gerade einmal zwei Artikeln:
 
 ```
 % Encoding: UTF-8
@@ -82,6 +66,34 @@ Einerseits könnte man benötigte Informationen vergessen und andererseits hat m
   url           = {https://www.cambridge.org/core/article/what-to-do-and-not-to-do-with-timeseries-crosssection-data/0E778B85AB008DAF8D13E0AC63505E37},
 }
 ```
+
+Es macht offensichtlich Sinn spezialisierte Software zu verwenden um diese zu erstellen.
+Es gibt viele Programme in diesem Bereich:
+
+
+Software | Linux | Mac | Windows | Kommentar
+------ | ------ |------ |------ |------ 
+JabRef | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | *nicht kommerziell* / Arbeitet ohne Umweg mit .bib-Dateien. *Aktuell (Sommer 2019) leider keine Empfehlung, weil eine ganz bestimmte Version von Java benötigt wird.*
+BibDesk | :x: | :heavy_check_mark: | :x: | 
+[Zotero](https://www.zotero.org/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | *nicht kommerziell* / Ohne Erweiterung wird der BibTeX-Key nicht direkt angezeigt, aber Export nach biblatex ist ohne weitere Einstellungen direkt möglich
+Citavi | :x: | :x: | :heavy_check_mark: | Kommerziell / Hat ein eigenes Format. / Man kann Unterstützung für LaTeX aktivieren, so dass Keys generiert werden und ein Export nach .bib möglich wird. / Bei der Installation aufpassen, wenn man nicht möchte, dass sich das Programm als Plugin in Browser und Word integriert.
+EndNote | :x: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
+Mendeley | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | kommerziell
+
+*Als Studierende der Universität Köln können Sie (mit Stand Sommer 2019) zumindest Endnote und Citavi vergünstigt beziehen. Wenn Sie sich für kostenpflichtige Software entscheiden, sollten Sie vorab mit der Demo-Version prüfen, ob der LaTeX-Export reibungslos klappt und Sie mit dem Workflow zurecht kommen.*
+
+**Bei Programmen, die nicht direkt mit .bib-Dateien arbeiten, müssen Sie oft den LaTeX-Support noch aktivieren!** Zum Beispiel müssen Sie dies in Citavi tun, damit Keys zum Zitieren generiert werden.
+
+### Beispiel: LaTeX-Support in Citavi aktivieren
+
+Um mit Citavi zu arbeiten müssen Sie den LaTeX-Support wie folgt aktivieren:
+
+
+1. Legen Sie ein neues lokales Projekt an.
+1. Im Menü "Extras" wählen Sie den Punkt "Optionen".
+1. Es öffnet sich ein Dialog. Hier wählen Sie die Kategorie "Zitation".
+1. Hier finden Sie eine Checkbox mit der Beschriftung "LaTeX-Unterstützung einschalten". Setzen Sie dort ein Häkchen.
+1. Sie können noch weitere Einstellungen tätigen, aber jetzt wurde ein Feld für den Key erzeugt. Sie finden es bei den einzelnen Einträgen im gleichen Tab wie den Titel.
 
 ## Literatur einlesen
 
@@ -142,14 +154,17 @@ Sie sollten noch weitere Befehle kennen:
 ## Das Literaturverzeichnis und die Zitate generieren
 
 
-Sie müssen LaTeX noch mitteilen, wo das Literaturverzeichnis / die Bibliographie angezeigt werden soll. Dazu fügen Sie im entsprechenden Dokument an der gewünschten Stelle den Befehl `\printbibliography` ein. Dort wird die Bibliographie dann ausgegeben. 
+Sie müssen LaTeX noch mitteilen, wo das Literaturverzeichnis / die Bibliographie angezeigt werden soll. Dazu fügen Sie im entsprechenden Dokument an der gewünschten Stelle den Befehl `\printbibliography` ein. Dort wird die Bibliographie dann ausgegeben. Wenn das Literaturverzeichnis im Inhaltsverzeichnis auftauchen soll, müssen Sie den Befehl erweitern:
+```
+\printbibliography[heading=bibintoc]
+```
 
 *Das Literaturverzeichnis enthält nur die Elemente, die Sie auch zitiert haben.* (Ausgenommen Sie weisen LaTeX an die gesamte .bib-Datenbank in der Bibliographie anzuzeigen.) Allerdings muss es - wie die Einträge - zunächst einmal generiert werden. Das geht in drei Schritten:
 
 
-1. Ein Durchlauf von `pdflatex hauptdokument.tex` . (Das Hauptdokument ist das mit der Präambel.)
-1. Ein Durchlauf von `biber hauptdokument`. (beachten Sie: .tex fehlt!)
-1. Ein weiterer Durchlauf von `pdflatex hauptdokument.tex`.
+1. Ein Durchlauf: `pdflatex hauptdokument.tex` (Das Hauptdokument ist das mit der Präambel.)
+1. Ein Durchlauf: `biber hauptdokument` (beachten Sie: .tex fehlt!)
+1. Ein weiterer Durchlauf: `pdflatex hauptdokument.tex`
 
 In den meisten LaTeX-Editoren ist das Profil `pdflatex -> bibtex -> pdflatex` hinterlegt. Theoretisch sollte BibTeX wegen unserer Einstellungen in der Präambel von sich aus `biber` aufrufen, aber das funktioniert in der Praxis nicht zuverlässig. Daher empfiehlt es sich das Profil anzupassen, oder ein Neues anzulegen.
 
